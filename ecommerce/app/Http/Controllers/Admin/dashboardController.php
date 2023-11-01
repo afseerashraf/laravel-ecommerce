@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class dashboardController 
 {
-    public function ashboard(){
+    public function dashboard(){
         return view('admin.dashboard');
     }
 }
