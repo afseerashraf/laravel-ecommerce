@@ -8,7 +8,6 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>General Form</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -29,32 +28,79 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
+                <h3 class="card-title">Add product</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{route('admin.product.save')}}"> method="POS">
+                
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <label for="name">name</label>
+                    <input type="text" class="form-control" id="pname" placeholder="product name" name="product_name">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="price">price</label>
+                    <input type="text" class="form-control" id="price" placeholder="price" name="price">
                   </div>
+
                   <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
+                  <label for="category">category</label>
+                    <select name="category" class="form-controll">
+                        <option value="">select an option</option>
+                        @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}} </option>
+                        @endforeach
+
+                    </select>
+                  </div>
+                  
+                  
+                  
+                  <div class="form-group">
+                    
+                    <br>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" class="custom-file-input" id="image" name="img">
+                        <label class="custom-file-label" for="exampleInputFile">image</label>
                       </div>
+
+
                       <div class="input-group-append">
                         <span class="input-group-text">Upload</span>
                       </div>
                     </div>
                   </div>
+                 <div class="form-group">
+                     <label for="status">Status</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="active" name="status" value="1">
+                        <label class="form-check-label" for="active">Active</label>
+                     </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="inactive" name="status" value="0">
+                        <label class="form-check-label" for="inactive">Inactive</label>
+                    </div>
+                 </div>
+
+                  
+                 <div class="form-group">
+                     <label for="status">Favourate</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="active" name="yes" value="Yes">
+                        <label class="form-check-label" for="active">Yes</label>
+                     </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="no" name="no" value="No">
+                        <label class="form-check-label" for="inactive">No</label>
+                    </div>
+                 </div>
+
+
+
+
+
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -63,7 +109,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                 <button type="submit" class="btn btn-primary">Save</button>
                 </div>
               </form>
             </div>

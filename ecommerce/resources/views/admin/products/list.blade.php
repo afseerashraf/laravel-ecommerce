@@ -8,7 +8,7 @@
             <h1>Products</h1>
             <div class="text-right">
             <div class="card-header">
-              <a href="route{{route('admin.products.create')}}" class="btn btn-primary">Add product</a>
+              <a href="" class="btn btn-primary">Add product</a>
             </div>
             </div>
           </div>

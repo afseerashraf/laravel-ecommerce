@@ -26,7 +26,7 @@ return new class extends Migration
             $table->double('price',15,2);
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('catogories');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->boolean('status')->comment('1:Active,2:Inactive')->default(1);
             $table->boolean('is_favourite')->comment('1:Yes,0:No')->default(0);
             $table->timestamps();
@@ -38,8 +38,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('catogories');
 
         Schema::dropIfExists('products');
+        Schema::dropIfExists('catogories');
+
     }
 };
