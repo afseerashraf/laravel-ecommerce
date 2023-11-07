@@ -5,12 +5,14 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\productSaveRequest;
 use App\Models\Category;
+use App\Models\product;
 use Illuminate\Http\Request;
 
 class productController 
 {
     public function list(){
-        return view('admin.products.list');
+        $products = product::all();
+        return view('admin.products.list',compact('products'));
     }
 
     public function create(){
@@ -19,7 +21,8 @@ class productController
     }
 
     public function save(productSaveRequest $request){
-        $data = $request->validated();
-        return $data;
+        $input = $request->validated();
+        product::create($input);
+        return redirect()->route('admin.product.list')->with('message','Product saved successfully');
     }
 }

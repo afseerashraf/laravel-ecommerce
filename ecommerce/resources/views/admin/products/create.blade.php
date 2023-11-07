@@ -32,8 +32,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('admin.product.save')}}"> method="POS">
-                
+              <form action="{{route('adminproduct.save')}}" method="POST"> 
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="name">name</label>
@@ -86,16 +86,17 @@
 
                   
                  <div class="form-group">
-                     <label for="status">Favourate</label>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="active" name="yes" value="Yes">
-                        <label class="form-check-label" for="active">Yes</label>
-                     </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="no" name="no" value="No">
-                        <label class="form-check-label" for="inactive">No</label>
-                    </div>
-                 </div>
+                    <label for="status">Favorite:</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="yes" name="favorite" value="Yes">
+                     <label class="form-check-label" for="yes">Yes</label>
+               </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="no" name="favorite" value="No">
+                      <label class="form-check-label" for="no">No</label>
+                </div>
+                </div>
+
 
 
 

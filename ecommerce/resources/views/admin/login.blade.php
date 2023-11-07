@@ -11,18 +11,25 @@
 
 <div class="container login-container">
     <h2 class="text-center">Admin Login</h2>
-    <form actio="{{route('admin.do.login')}}" method="POST">
-        @csrf
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+    <form action="{{route ('admindo.login')}}" method="post">
+    @csrf
+    <div class="row">
+        <div class="col">
+    <div class="form-group">
+        <label for="username" text><strong>Username:</strong></label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+    </div>
         </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+        <div class="col">
+    <div class="form-group">
+        <label for="password"><strong>Password:</strong></label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+    </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-    </form>
+   
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
+</form>
+
 </div>
     
 

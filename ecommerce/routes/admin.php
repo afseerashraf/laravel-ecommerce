@@ -8,14 +8,14 @@ use App\Http\Controllers\User\HomepageController;
 
 
 Route::name('admin')->group(function(){
-    //Route::get('admin/login',[LoginController::class,'login'])->name('loginpage'); //have Route [admin.do.login] not defined.
+    Route::get('admin/login',[LoginController::class,'login'])->name('loginpage'); 
     Route::post('admin/do-login',[LoginController::class,'dologin'])->name('do.login'); //have The GET method is not supported for route admin/do-login. Supported methods: POST.
     Route::get('/admin',[dashboardController::class,'dashboard'])->name('dashboard');
     
  Route::name('product.')->prefix('admin/product')->group(function(){
-    Route::get('/',[productController::class,'list'])->name('product.list');// view\admin\product\list
-    Route::get('create',[productController::class,'create'])->name('create');   //Route [admin.product.save] not defined.
-    Route::post('save',[productController::class,'save'])->name('save');   //The GET method is not supported for route admin/products/save. Supported methods: POST.
+    Route::get('/',[productController::class,'list'])->name('product.list');
+    Route::get('/create',[productController::class,'create'])->name('create');   
+    Route::post('/save',[productController::class,'save'])->name('save');   //The GET method is not supported for route admin/products/save. Supported methods: POST.
 
 
 
